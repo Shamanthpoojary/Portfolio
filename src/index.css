@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #070f0d;
+  --color-bg-soft: #0a1613;
+  --color-panel: #0d1a16;
+  --color-panel-hi: #112620;
+  --color-border: #1c3a2f;
+  --color-border-hi: #2b5442;
+  --color-trace: #2ee6a8;
+  --color-trace-dim: #1a8f68;
+  --color-copper: #c98a4b;
+  --color-amber: #ffb347;
+  --color-text: #e6f2ea;
+  --color-muted: #7fa392;
+  --color-danger: #ff6b6b;
+
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-blink: blink 1.6s step-end infinite;
+  --animate-scan: scan 6s linear infinite;
+  --animate-pulse-trace: pulse-trace 2.4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 45% { opacity: 1; }
+  50%, 95% { opacity: 0.15; }
+  100% { opacity: 1; }
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes pulse-trace {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-trace);
+  color: #05100c;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-hi);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-trace-dim);
+}
+
+.text-glow {
+  text-shadow: 0 0 12px rgba(46, 230, 168, 0.45);
+}
+
+.pcb-grid-bg {
+  background-image:
+    linear-gradient(rgba(46, 230, 168, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 230, 168, 0.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.solder-dot {
+  background-image: radial-gradient(rgba(46, 230, 168, 0.14) 1px, transparent 1.4px);
+  background-size: 22px 22px;
+}
+
+.pcb-edge {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-copper) 0,
+    var(--color-copper) 10px,
+    transparent 10px,
+    transparent 24px
+  );
+  opacity: 0.4;
+}
+
+@keyframes glitch-jitter {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-3px, 1px); }
+  40% { transform: translate(3px, -1px); }
+  60% { transform: translate(-2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+.glitch-text {
+  display: inline-block;
+  color: var(--color-trace);
+  animation: glitch-jitter 0.12s steps(2, end) infinite;
+  text-shadow:
+    2px 0 rgba(255, 45, 85, 0.8),
+    -2px 0 rgba(46, 200, 255, 0.8);
+}
