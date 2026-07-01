@@ -11,7 +11,7 @@ export const personal = {
   linkedin: "https://www.linkedin.com/in/shamanth-poojary-3489631a0/",
   github: "https://github.com/shamanth-poojary", // TODO: verify/update
   summary:
-    "Embedded systems engineer with hands-on experience across firmware development, low-level driver implementation, and embedded GUI design. Currently building BLE and Bluetooth Classic firmware for consumer devices at MIVI, with a background spanning STM32, ESP32, and Silicon Labs EFR32 wireless SoCs — from board bring-up and peripheral drivers to RTOS-based application firmware.",
+    "Embedded systems engineer with hands-on experience across firmware development, low-level driver implementation, and embedded GUI design. Currently developing and debugging TWS earbuds firmware at MIVI on an ARM Cortex-M chip running RTX5 RTOS, with a background spanning STM32, ESP32, and Silicon Labs EFR32 wireless SoCs — from board bring-up and peripheral drivers to RTOS-based application firmware.",
 };
 
 export const stats = [
@@ -25,15 +25,12 @@ export const experience = [
     company: "MIVI",
     role: "Firmware Engineer",
     location: "India",
-    start: "Jul 2025",
+    start: "Jun 2026",
     end: "Present",
     current: true,
-    stack: ["TWS", "BLE", "Bluetooth Classic", "Debugging", "C/C++"],
+    stack: ["ARM Cortex-M", "RTX5", "Classic Bluetooth", "BLE", "TWS"],
     bullets: [
-      "Developing and maintaining firmware for MIVI's TWS (True Wireless Stereo) earbuds — BLE pairing, connection stability, and audio streaming behavior.",
-      "Debugging firmware issues such as pairing failures, dropped connections, and audio dropouts using logic analyzers and serial/protocol traces.",
-      "Working across Bluetooth SoC firmware to track down and fix BLE/Classic coexistence and connectivity issues reported from the field.",
-      "Reproducing and root-causing TWS firmware defects with hardware and QA teams ahead of release.",
+      "Currently developing and debugging TWS earbuds firmware — working on an ARM Cortex-M chip running RTX5 RTOS, bringing up and validating Classic Bluetooth and BLE functionality from bare-metal boot through full stack initialisation.",
     ],
   },
   {
@@ -41,7 +38,7 @@ export const experience = [
     role: "Associate Software Engineer",
     location: "India",
     start: "Jun 2025",
-    end: "Jul 2025",
+    end: "May 2026",
     current: false,
     stack: ["Linux", "Yocto", "FreeRTOS", "PyQt", "STM32", "ESP32"],
     bullets: [
@@ -112,6 +109,8 @@ export const skillGroups = [
     label: "RTOS & Firmware",
     ref: "U2",
     items: [
+      "ARM Cortex-M Firmware Development",
+      "RTX5 RTOS",
       "FreeRTOS",
       "Bare-Metal Programming",
       "Device Drivers",
@@ -139,7 +138,8 @@ export const skillGroups = [
     items: [
       "BLE",
       "BLE Mesh",
-      "Bluetooth Classic",
+      "Classic Bluetooth (SPP, RFCOMM, SDP, A2DP)",
+      "TWS (True Wireless Stereo) Systems",
       "Wi-Fi (802.11)",
       "I2C",
       "SPI",
