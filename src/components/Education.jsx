@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import Led from "./Led";
 import { education } from "../data/content";
 
 export default function Education() {
   return (
     <section id="education" className="relative border-b border-border">
+      <Led size={8} top="5.5rem" right="4rem" delay={0.4} duration={1.8} />
       <div className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading index="05" title="Education" />
 

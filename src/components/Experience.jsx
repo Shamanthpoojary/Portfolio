@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
+import Led from "./Led";
 import { experience } from "../data/content";
 
 export default function Experience() {
   return (
     <section id="experience" className="relative border-b border-border bg-bg-soft">
+      <Led size={9} top="5.5rem" right="2.5rem" delay={0.2} duration={2.4} />
+      <Led size={7} bottom="3rem" left="1.5rem" delay={1.1} duration={1.9} />
       <div className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading
           index="02"

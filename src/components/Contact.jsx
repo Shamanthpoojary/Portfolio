@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Zap } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import { GithubIcon, LinkedinIcon } from "./BrandIcons";
+import Led from "./Led";
 import { personal } from "../data/content";
 
 const LEFT_PINS = [
@@ -225,6 +226,7 @@ function MobilePinList() {
 export default function Contact() {
   return (
     <section id="contact" className="relative border-b border-border bg-bg-soft">
+      <Led size={8} top="5.5rem" left="3rem" delay={0.6} duration={2.3} />
       <div className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading
           index="06"

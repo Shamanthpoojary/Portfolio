@@ -5,6 +5,7 @@ import CircuitBackground from "./CircuitBackground";
 import { GithubIcon, LinkedinIcon } from "./BrandIcons";
 import { ResistorIcon, ChipIcon, CapacitorIcon } from "./ElectronicIcons";
 import GlitchName from "./GlitchName";
+import Led from "./Led";
 import { personal, stats } from "../data/content";
 
 const STAT_ICONS = [ResistorIcon, ChipIcon, CapacitorIcon];
@@ -71,6 +72,8 @@ export default function Hero() {
     >
       <CircuitBackground className="opacity-70" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg/40 to-bg" />
+      <Led size={9} top="6rem" right="3.5rem" delay={0.3} duration={2.1} />
+      <Led size={7} top="14rem" left="2.5rem" delay={1.4} duration={1.7} />
 
       <div className="relative mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-center px-6 py-24">
         <motion.p

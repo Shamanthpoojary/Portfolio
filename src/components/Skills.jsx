@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
+import Led from "./Led";
 import { skillGroups } from "../data/content";
 
 export default function Skills() {
   return (
     <section id="skills" className="relative border-b border-border">
+      <Led size={8} top="5.5rem" right="3rem" delay={0.5} duration={2} />
       <div className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading
           index="03"

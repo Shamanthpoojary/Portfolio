@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
+import Led from "./Led";
 import { projects } from "../data/content";
 
 const STATUS_LABEL = {
@@ -19,6 +20,8 @@ const STATUS_COLOR = {
 export default function Projects() {
   return (
     <section id="projects" className="relative border-b border-border bg-bg-soft">
+      <Led size={7} top="5.5rem" left="2.5rem" delay={1.3} duration={2.2} />
+      <Led size={9} bottom="3rem" right="3rem" delay={0.7} duration={1.7} />
       <div className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading
           index="04"

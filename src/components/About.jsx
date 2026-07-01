@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Cpu, Radio, Layers } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import Led from "./Led";
 import { personal } from "../data/content";
 
 const PILLARS = [
@@ -24,6 +25,7 @@ const PILLARS = [
 export default function About() {
   return (
     <section id="about" className="relative border-b border-border">
+      <Led size={8} bottom="2.5rem" left="1.5rem" delay={0.9} duration={1.6} />
       <div className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading index="01" title="About" subtitle="A quick datasheet on how I work." />
 
