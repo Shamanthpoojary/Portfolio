@@ -229,7 +229,7 @@ export default function Contact() {
       <Led size={8} top="5.5rem" left="3rem" delay={0.6} duration={2.3} />
       <div className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading
-          index="06"
+          index="07"
           title="Contact"
           subtitle="Schematic pinout — reach out on any of these lines."
         />
