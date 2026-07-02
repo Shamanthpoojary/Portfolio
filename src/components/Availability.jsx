@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Wrench, MonitorCog, ArrowRight } from "lucide-react";
 import SectionHeading from "./SectionHeading";
-import Led from "./Led";
 
 const OFFERINGS = [
   {
@@ -21,7 +20,6 @@ const OFFERINGS = [
 export default function Availability() {
   return (
     <section id="availability" className="relative border-b border-border">
-      <Led size={7} top="5.5rem" left="3rem" delay={1} duration={2} />
       <div className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading
           index="06"
