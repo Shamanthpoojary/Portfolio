@@ -11,7 +11,7 @@ export const personal = {
   linkedin: "https://www.linkedin.com/in/shamanth-poojary-3489631a0/",
   github: "https://github.com/shamanth-poojary", // TODO: verify/update
   summary:
-    "Embedded systems engineer with hands-on experience across firmware development, low-level driver implementation, and embedded GUI design. Currently developing and debugging TWS earbuds firmware at MIVI on an ARM Cortex-M chip running RTX5 RTOS, with a background spanning STM32, ESP32, and Silicon Labs EFR32 wireless SoCs — from board bring-up and peripheral drivers to RTOS-based application firmware.",
+    "Embedded Systems Engineer with hands-on experience in firmware development, low-level driver implementation, and embedded GUI design. Currently working as a Firmware Engineer at MIVI, developing and debugging TWS earbuds firmware on ARM Cortex-M microcontrollers running RTX5 RTOS. Background includes working with STM32, ESP32, and Silicon Labs EFR32 wireless SoCs, with core expertise spanning from board bring-up and peripheral drivers (GPIO, I2C, SPI, UART) to RTOS-based application firmware.",
 };
 
 export const stats = [

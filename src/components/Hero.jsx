@@ -43,24 +43,6 @@ function useTypewriter(words, { typeMs = 55, deleteMs = 30, holdMs = 1400 } = {}
   return text;
 }
 
-function Waveform() {
-  return (
-    <svg viewBox="0 0 400 60" className="h-10 w-full max-w-xs text-trace" aria-hidden="true">
-      <motion.path
-        d="M0,30 L30,30 L40,10 L50,50 L60,30 L90,30 L100,15 L110,45 L120,30 L150,30 L160,5 L170,55 L180,30 L210,30 L220,20 L230,40 L240,30 L270,30 L280,10 L290,50 L300,30 L400,30"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
-      />
-    </svg>
-  );
-}
-
 export default function Hero() {
   const typed = useTypewriter(ROLES);
 
@@ -104,8 +86,6 @@ export default function Hero() {
         >
           {personal.summary}
         </motion.p>
-
-        <Waveform />
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
