@@ -100,20 +100,3 @@ body {
   );
   opacity: 0.4;
 }
-
-@keyframes glitch-jitter {
-  0%, 100% { transform: translate(0, 0); }
-  20% { transform: translate(-3px, 1px); }
-  40% { transform: translate(3px, -1px); }
-  60% { transform: translate(-2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-}
-
-.glitch-text {
-  display: inline-block;
-  color: var(--color-trace);
-  animation: glitch-jitter 0.12s steps(2, end) infinite;
-  text-shadow:
-    2px 0 rgba(255, 45, 85, 0.8),
-    -2px 0 rgba(46, 200, 255, 0.8);
-}

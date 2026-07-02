@@ -20,7 +20,6 @@ const REPEAT_EVERY = 14000;
 
 export default function GlitchName({ text, className }) {
   const [display, setDisplay] = useState(text);
-  const [glitching, setGlitching] = useState(false);
   const timers = useRef([]);
 
   useEffect(() => {
@@ -35,7 +34,6 @@ export default function GlitchName({ text, className }) {
         track(setTimeout(() => decodeTick(revealed + 1), DECODE_TICK));
       } else {
         setDisplay(text);
-        setGlitching(false);
       }
     }
 
@@ -49,7 +47,6 @@ export default function GlitchName({ text, className }) {
     }
 
     function runGlitch() {
-      setGlitching(true);
       scrambleTick(0);
     }
 
@@ -63,7 +60,5 @@ export default function GlitchName({ text, className }) {
     };
   }, [text]);
 
-  return (
-    <span className={glitching ? "glitch-text" : className}>{display}</span>
-  );
+  return <span className={className}>{display}</span>;
 }

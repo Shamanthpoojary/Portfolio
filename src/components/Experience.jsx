@@ -33,10 +33,8 @@ export default function Experience() {
                 className="relative pl-10 sm:pl-14"
               >
                 <span
-                  className={`absolute left-0 top-1.5 flex h-8 w-8 items-center justify-center rounded-full border-2 sm:h-10 sm:w-10 ${
-                    job.current
-                      ? "border-trace bg-trace/10"
-                      : "border-border-hi bg-panel"
+                  className={`absolute left-0 top-1.5 flex h-8 w-8 items-center justify-center rounded-full border-2 bg-panel sm:h-10 sm:w-10 ${
+                    job.current ? "border-trace" : "border-border-hi"
                   }`}
                 >
                   <span

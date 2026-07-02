@@ -26,20 +26,23 @@ const CHIP_Y = (H - CHIP_H) / 2;
 const STUB = 16;
 
 // 7 evenly spaced slots per vertical edge; the 2nd, 4th and 6th are wired
-// out to real contact info, the rest are plain unlabeled leads.
+// out to real contact info, the rest are labeled like ordinary MCU pins.
 const V_OFFSETS = [25, 50, 75, 100, 125, 150, 175].map((o) => CHIP_Y + o);
 const ACTIVE_V_INDEX = [1, 3, 5];
+const LEFT_LEAD_NAMES = ["SDA", "SCL", "MOSI", "MISO"];
+const RIGHT_LEAD_NAMES = ["SCLK", "CS", "VCC", "GND"];
 
 // 5 evenly spaced decorative-only slots along each horizontal edge.
 const H_OFFSETS = [28, 56, 84, 112, 140].map((o) => CHIP_X + o);
 
-function edgeSlots(offsets, activeIndexes, activePins) {
+function edgeSlots(offsets, activeIndexes, activePins, leadNames) {
   let activeCursor = 0;
+  let leadCursor = 0;
   return offsets.map((pos, i) => {
     if (activeIndexes.includes(i)) {
       return { pos, active: true, pin: activePins[activeCursor++] };
     }
-    return { pos, active: false };
+    return { pos, active: false, name: leadNames[leadCursor++] };
   });
 }
 
@@ -55,6 +58,42 @@ function DecorativeLead({ edge, pos }) {
     return <span className={base} style={{ left: pos - 1, top: CHIP_Y - STUB, width: 2, height: STUB }} />;
   }
   return <span className={base} style={{ left: pos - 1, top: CHIP_Y + CHIP_H, width: 2, height: STUB }} />;
+}
+
+// A named-but-not-clickable lead, e.g. VCC / GND / SDA — real MCU pin names
+// filling out the rest of the package, styled dimmer than the live contact pins.
+function LabeledLead({ side, y, name }) {
+  const isLeft = side === "left";
+  const line = <span className="h-px flex-1 bg-border-hi" style={{ maxWidth: 22 }} />;
+  const dot = <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-border-hi" />;
+  const label = (
+    <span className="shrink-0 font-mono text-[9px] tracking-wider text-muted">{name}</span>
+  );
+
+  return (
+    <div
+      style={
+        isLeft
+          ? { position: "absolute", left: CHIP_X - 90, top: y - 8, width: 90, height: 16 }
+          : { position: "absolute", left: CHIP_X + CHIP_W, top: y - 8, width: 90, height: 16 }
+      }
+      className={`flex items-center gap-1.5 ${isLeft ? "justify-end" : "justify-start"}`}
+    >
+      {isLeft ? (
+        <>
+          {label}
+          {line}
+          {dot}
+        </>
+      ) : (
+        <>
+          {dot}
+          {line}
+          {label}
+        </>
+      )}
+    </div>
+  );
 }
 
 function ActivePin({ pin, side, y }) {
@@ -137,8 +176,8 @@ function PinLabel({ pin }) {
 }
 
 function SchematicDiagram() {
-  const leftSlots = edgeSlots(V_OFFSETS, ACTIVE_V_INDEX, LEFT_PINS);
-  const rightSlots = edgeSlots(V_OFFSETS, ACTIVE_V_INDEX, RIGHT_PINS);
+  const leftSlots = edgeSlots(V_OFFSETS, ACTIVE_V_INDEX, LEFT_PINS, LEFT_LEAD_NAMES);
+  const rightSlots = edgeSlots(V_OFFSETS, ACTIVE_V_INDEX, RIGHT_PINS, RIGHT_LEAD_NAMES);
 
   return (
     <div className="mx-auto hidden lg:block" style={{ width: W, height: H }}>
@@ -147,7 +186,7 @@ function SchematicDiagram() {
           slot.active ? (
             <ActivePin key={`l-${i}`} pin={slot.pin} side="left" y={slot.pos} />
           ) : (
-            <DecorativeLead key={`l-${i}`} edge="left" pos={slot.pos} />
+            <LabeledLead key={`l-${i}`} side="left" y={slot.pos} name={slot.name} />
           )
         )}
 
@@ -155,7 +194,7 @@ function SchematicDiagram() {
           slot.active ? (
             <ActivePin key={`r-${i}`} pin={slot.pin} side="right" y={slot.pos} />
           ) : (
-            <DecorativeLead key={`r-${i}`} edge="right" pos={slot.pos} />
+            <LabeledLead key={`r-${i}`} side="right" y={slot.pos} name={slot.name} />
           )
         )}
 
