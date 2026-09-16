@@ -8,7 +8,7 @@ const BOOT_LINES = [
   "[  0.082] loading firmware image: shamanth.bin",
   "[  0.140] verifying checksum .............. OK",
   "[  0.201] starting RTOS scheduler .......... OK",
-  "[  0.256] enumerating peripherals: BLE, UART, SPI, I2C",
+  "[  0.256] enumerating peripherals: UART, SPI, I2C, GPIO",
   "[  0.318] link established ................ 100%",
   "> boot complete",
 ];

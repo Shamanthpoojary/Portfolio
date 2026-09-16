@@ -6,8 +6,8 @@ const OFFERINGS = [
   {
     icon: Wrench,
     title: "Embedded Firmware",
-    body: "Freelance firmware engagements — board bring-up, peripheral drivers, RTOS integration, and BLE/Bluetooth stack work for connected products.",
-    tags: ["Bring-up", "Drivers", "RTOS", "BLE / BT"],
+    body: "Freelance firmware engagements — board bring-up, peripheral drivers across UART/SPI/I2C, bare-metal and FreeRTOS integration, and LVGL touchscreen interfaces.",
+    tags: ["Bring-up", "Drivers", "Bare-Metal", "FreeRTOS", "Embedded GUI"],
   },
   {
     icon: MonitorCog,

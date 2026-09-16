@@ -10,10 +10,10 @@ import { personal, stats } from "../data/content";
 const STAT_ICONS = [ResistorIcon, ChipIcon, CapacitorIcon];
 
 const ROLES = [
-  "BLE / BT Firmware Engineer",
-  "RTOS & Bare-Metal Developer",
-  "STM32 · ESP32 · EFR32",
-  "Embedded GUI (LVGL) Builder",
+  "Embedded Firmware Engineer",
+  "Bare-Metal & FreeRTOS Developer",
+  "Peripheral Drivers — UART / SPI / I2C",
+  "Embedded GUI — LVGL & Qt",
 ];
 
 function useTypewriter(words, { typeMs = 55, deleteMs = 30, holdMs = 1400 } = {}) {

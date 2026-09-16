@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
-import { Cpu, Radio, Layers } from "lucide-react";
+import { Cpu, Cable, Layers } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import { personal } from "../data/content";
 
 const PILLARS = [
   {
     icon: Cpu,
-    title: "Bare-Metal & RTOS",
-    body: "Firmware built directly on STM32, ESP32 and EFR32 silicon — bare-metal and FreeRTOS-based, from bring-up through production.",
+    title: "Bare-Metal & FreeRTOS",
+    body: "Firmware built directly on STM32 and ESP32 silicon — bare-metal and FreeRTOS-based, from board bring-up through production.",
   },
   {
-    icon: Radio,
-    title: "BLE & Wireless",
-    body: "BLE, BLE Mesh, and Bluetooth Classic stacks for connected devices — GATT profiles, pairing, OTA updates, and RF tuning.",
+    icon: Cable,
+    title: "Drivers & Interfaces",
+    body: "Low-level peripheral drivers and hardware abstraction layers across UART, SPI, I2C, GPIO, ADC and EEPROM/Flash.",
   },
   {
     icon: Layers,
-    title: "Drivers & GUI",
-    body: "Low-level peripheral drivers (GPIO, I2C, SPI, UART) alongside embedded GUI work with LVGL and touch displays.",
+    title: "Embedded GUI",
+    body: "Touchscreen interfaces in LVGL with custom display drivers, plus Qt/C++ desktop tooling for device configuration.",
   },
 ];
 
@@ -48,9 +48,9 @@ export default function About() {
   "role": "`}<span className="text-copper">{personal.role}</span>{`",
   "based_in": "`}<span className="text-text">{personal.location}</span>{`",
   "focus": [
-    "BLE / BT firmware",
-    "RTOS & bare-metal",
-    "driver development"
+    "bare-metal & FreeRTOS",
+    "peripheral drivers",
+    "embedded GUI"
   ],
   "status": "`}<span className="text-trace">actively building</span>{`"
 }`}
