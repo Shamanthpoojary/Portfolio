@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Zap } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import ContactForm from "./ContactForm";
 import { GithubIcon, LinkedinIcon } from "./BrandIcons";
 import { personal } from "../data/content";
 
@@ -284,6 +285,7 @@ export default function Contact() {
 
         <SchematicDiagram />
         <MobilePinList />
+        <ContactForm />
       </div>
     </section>
   );

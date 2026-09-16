@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
+import { Download } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import { GithubIcon } from "./BrandIcons";
 import { projects } from "../data/content";
 
 const STATUS_LABEL = {
@@ -77,6 +79,31 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
+
+              {(p.repo || p.releases) && (
+                <div className="mt-4 flex flex-wrap items-center gap-4 font-mono text-xs">
+                  {p.repo && (
+                    <a
+                      href={p.repo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-trace hover:underline"
+                    >
+                      <GithubIcon size={14} /> source
+                    </a>
+                  )}
+                  {p.releases && (
+                    <a
+                      href={p.releases}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-copper hover:underline"
+                    >
+                      <Download size={14} /> download
+                    </a>
+                  )}
+                </div>
+              )}
             </motion.article>
           ))}
         </div>

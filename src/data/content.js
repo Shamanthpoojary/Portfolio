@@ -1,5 +1,4 @@
 // Central content file — edit facts, dates, and links here.
-// TODO: replace the GitHub URL below with your real profile once you have one handy.
 
 export const personal = {
   name: "Shamanth S Poojary",
@@ -226,7 +225,32 @@ export const skillGroups = [
   },
 ];
 
+// Web3Forms access key. This is a public alias for the destination inbox, not
+// a secret — it is meant to ship in client code.
+export const contactForm = {
+  accessKey: "",
+  endpoint: "https://api.web3forms.com/submit",
+};
+
 export const projects = [
+  {
+    id: "uartx",
+    name: "UartX — UART Debugging & Log Analysis",
+    org: "Open Source · MIT",
+    period: "Sep 2026 – Present",
+    status: "active",
+    repo: "https://github.com/Shamanthpoojary/UartX",
+    releases: "https://github.com/Shamanthpoojary/UartX/releases/latest",
+    description:
+      "Cross-platform serial terminal built around a real firmware problem: reading high-volume logs without deleting log statements and changing the timing that hides the bug. Everything keeps recording; filters decide what you look at.",
+    bullets: [
+      "Keyword colour rules and independent filter windows over a live serial stream, plus retrospective search across captured output.",
+      "Serial terminal with port enumeration, configurable baud and flow control, auto-reconnect, and a send box with command history.",
+      "Millisecond timestamps, RX/TX indicators, hex/ASCII views, CR/LF normalisation, and raw session logging to disk.",
+      "Ships for Windows (installer and portable) and Linux (AppImage, .deb, tarball) from a CMake/Ninja release pipeline.",
+    ],
+    tech: ["C++17", "Qt 6", "CMake", "Ninja", "Serial / UART", "Windows", "Linux"],
+  },
   {
     id: "gnss-tool",
     name: "GNSS Receiver Configuration Tool & Validation Testbench",
