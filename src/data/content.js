@@ -228,7 +228,7 @@ export const skillGroups = [
 // Web3Forms access key. This is a public alias for the destination inbox, not
 // a secret — it is meant to ship in client code.
 export const contactForm = {
-  accessKey: "",
+  accessKey: "99b862fa-5bd5-44b8-b96e-6fe1f6638efb",
   endpoint: "https://api.web3forms.com/submit",
 };
 
