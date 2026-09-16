@@ -73,10 +73,12 @@ export default function Hero() {
           <span className="block font-mono text-xl font-semibold text-muted sm:text-2xl">
             I&apos;m
           </span>
-          <GlitchName
-            text={personal.name}
-            className="name-retro mt-3 block text-base sm:text-2xl md:text-[1.9rem]"
-          />
+          <span className="seg-slot mt-3 block text-[1.15rem] sm:text-[1.6rem] md:text-[2.1rem]">
+            <span className="name-retro seg-ghost" aria-hidden="true">
+              {personal.name.replace(/\S/g, "8")}
+            </span>
+            <GlitchName text={personal.name} className="name-retro block" />
+          </span>
         </motion.h1>
 
         <div className="mt-4 h-8 font-mono text-lg text-muted sm:text-xl">
