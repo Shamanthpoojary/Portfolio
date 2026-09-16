@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #070f0d;
-  --color-bg-soft: #0a1613;
-  --color-panel: #0d1a16;
-  --color-panel-hi: #112620;
+  --color-bg: #000000;
+  --color-bg-soft: #070707;
+  --color-panel: #0b0b0b;
+  --color-panel-hi: #151515;
   --color-border: #1c3a2f;
   --color-border-hi: #2b5442;
   --color-trace: #2ee6a8;
@@ -17,6 +17,7 @@
 
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-retro: "Press Start 2P", "JetBrains Mono", ui-monospace, monospace;
 
   --animate-blink: blink 1.6s step-end infinite;
   --animate-scan: scan 6s linear infinite;
@@ -76,6 +77,35 @@ body {
 
 .text-glow {
   text-shadow: 0 0 12px rgba(46, 230, 168, 0.45);
+}
+
+/* Arcade marquee treatment: crisp lit core + tight bloom, not a soft haze. */
+.name-retro {
+  font-family: var(--font-retro);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  color: var(--color-trace);
+  text-shadow:
+    0 0 1px rgba(160, 255, 220, 0.95),
+    0 0 6px rgba(46, 230, 168, 0.75),
+    0 0 18px rgba(46, 230, 168, 0.35),
+    0 3px 0 rgba(0, 0, 0, 0.9);
+  animation: crt-flicker 4.5s infinite steps(1);
+}
+
+@keyframes crt-flicker {
+  0%, 92%, 100% { opacity: 1; }
+  93% { opacity: 0.72; }
+  94% { opacity: 1; }
+  96% { opacity: 0.85; }
+  97% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .name-retro {
+    animation: none;
+  }
 }
 
 .pcb-grid-bg {

@@ -51,8 +51,8 @@ export default function Hero() {
       id="top"
       className="relative overflow-hidden border-b border-border pcb-grid-bg"
     >
-      <CircuitBackground className="opacity-70" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg/40 to-bg" />
+      <CircuitBackground className="opacity-95" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg/25 to-bg" />
 
       <div className="relative mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-center px-6 py-24">
         <motion.p
@@ -68,9 +68,15 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="max-w-3xl font-mono text-4xl font-extrabold leading-tight text-text sm:text-5xl md:text-6xl"
+          className="max-w-3xl"
         >
-          I&apos;m <GlitchName text={personal.name} className="text-trace text-glow" />
+          <span className="block font-mono text-xl font-semibold text-muted sm:text-2xl">
+            I&apos;m
+          </span>
+          <GlitchName
+            text={personal.name}
+            className="name-retro mt-3 block text-base sm:text-2xl md:text-[1.9rem]"
+          />
         </motion.h1>
 
         <div className="mt-4 h-8 font-mono text-lg text-muted sm:text-xl">
