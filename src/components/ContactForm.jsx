@@ -24,6 +24,7 @@ function Label({ htmlFor, children, hint }) {
 
 export default function ContactForm() {
   const [form, setForm] = useState(EMPTY);
+  const [botcheck, setBotcheck] = useState("");
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
 
@@ -49,6 +50,7 @@ export default function ContactForm() {
           access_key: contactForm.accessKey,
           from_name: "Portfolio contact form",
           replyto: form.email,
+          botcheck,
           ...form,
         }),
       });
@@ -98,7 +100,9 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         className="rounded-lg border border-border bg-panel p-6 sm:p-7"
       >
-        {/* Web3Forms discards anything that fills this in. */}
+        {/* Honeypot: invisible to people, so anything that ticks it is a bot.
+            The value has to be tracked in state — a JSON submit never
+            serializes the form, so an unread input would do nothing. */}
         <input
           type="checkbox"
           name="botcheck"
@@ -106,6 +110,9 @@ export default function ContactForm() {
           className="hidden"
           tabIndex="-1"
           autoComplete="off"
+          aria-hidden="true"
+          checked={botcheck === "true"}
+          onChange={(e) => setBotcheck(e.target.checked ? "true" : "")}
         />
 
         <div className="grid gap-4 sm:grid-cols-2">
