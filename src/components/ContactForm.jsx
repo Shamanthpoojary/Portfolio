@@ -86,7 +86,8 @@ export default function ContactForm() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5 }}
-      className="mx-auto mt-20 max-w-2xl"
+      id="send-message"
+      className="mx-auto mt-20 max-w-2xl scroll-mt-24"
     >
       <div className="mb-6 text-center">
         <h3 className="font-mono text-xl font-bold text-text sm:text-2xl">Send a message</h3>

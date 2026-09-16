@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BootScreen from "./components/BootScreen";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
@@ -13,6 +13,17 @@ import Footer from "./components/Footer";
 
 function App() {
   const [booted, setBooted] = useState(false);
+
+  // The browser resolves a deep link's #hash before the boot screen finishes
+  // rendering the page behind it, so the jump is lost. Redo it once the boot
+  // screen is out of the way, instantly rather than smoothly — a deep link
+  // should land where it was aimed, not scroll the whole page first.
+  useEffect(() => {
+    if (!booted) return;
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id) return;
+    document.getElementById(id)?.scrollIntoView({ behavior: "auto", block: "start" });
+  }, [booted]);
 
   return (
     <>
