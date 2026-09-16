@@ -12,7 +12,7 @@ const LEFT_PINS = [
 
 const RIGHT_PINS = [
   { num: "4", icon: LinkedinIcon, label: "LINKEDIN", value: "linkedin.com/in/shamanth-poojary", href: personal.linkedin },
-  { num: "5", icon: GithubIcon, label: "GITHUB", value: "github.com/shamanth-poojary", href: personal.github },
+  { num: "5", icon: GithubIcon, label: "GITHUB", value: "github.com/Shamanthpoojary", href: personal.github },
   { num: "6", icon: Zap, label: "STATUS", value: "OPEN TO WORK", href: undefined, active: true },
 ];
 

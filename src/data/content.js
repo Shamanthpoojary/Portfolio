@@ -9,7 +9,7 @@ export const personal = {
   email: "shamanth25402@gmail.com",
   phone: "+91 91139 05491",
   linkedin: "https://www.linkedin.com/in/shamanth-poojary-3489631a0/",
-  github: "https://github.com/shamanth-poojary", // TODO: verify/update
+  github: "https://github.com/Shamanthpoojary",
   summary:
     "Embedded Firmware Engineer specializing in bare-metal and FreeRTOS-based firmware development in Embedded C/C++ on ARM Cortex-M platforms, primarily STM32 and ESP32. Core work is low-level peripheral drivers and hardware abstraction layers across UART, SPI, I2C, GPIO, ADC and EEPROM/Flash, paired with embedded GUI development in LVGL and desktop tooling in Qt/C++. Owns board bring-up, firmware debugging and hardware validation end to end, using JTAG/SWD, GDB, logic analyzers and oscilloscopes.",
 };
